@@ -6,7 +6,7 @@ ENDCOLOR="\e[0m"
 
 trap 'if [[ $? -eq 139 ]]; then echo -e "${RED}segfault!${ENDCOLOR}"; fi' CHLD
 
-TARGETS="segfault fixed"
+TARGETS="segfault fixed intrinsics"
 COMPILERS="gcc clang"
 COMPILE_OPTIONS="-g -Og -O0 -O1 -O2 -O3"
 
@@ -27,3 +27,9 @@ for target in $TARGETS; do
 		done
 	done
 done
+
+echo ""
+echo "the diff between segfault.c and fixed.c is"
+diff segfault.c fixed.c
+echo ""
+
