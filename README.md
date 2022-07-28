@@ -1,4 +1,11 @@
 # coreboot-cpuid-bug
 demo of faulty coreboot cpuid usage
 
-run via __run_fixed.sh__
+# issue
+rbx is not restored after the call to cpuid
+
+# fix
+add rbx to clobber, or use compiler intrinsics
+
+# run
+via __run_fixed.sh__
