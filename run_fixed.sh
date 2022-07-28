@@ -11,10 +11,11 @@ COMPILERS="gcc clang"
 COMPILE_OPTIONS="-g -Og -O0 -O1 -O2 -O3"
 
 for target in $TARGETS; do
+	echo -e "\n$target:"
 	for compiler in $COMPILERS; do
 		for variant in $COMPILE_OPTIONS; do
 			compile_command="$compiler -m64 $variant $target.c"
-			echo -en "$compile_command: "
+			echo -en "\t$compile_command: "
 			$compile_command
 			output=$(./a.out 2>&1)
 			returnval=$?
