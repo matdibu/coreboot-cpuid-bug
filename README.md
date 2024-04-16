@@ -1,3 +1,5 @@
+# update: fixed by https://review.coreboot.org/c/coreboot/+/66345
+
 # coreboot-cpuid-bug
 demo of faulty coreboot cpuid usage
 
